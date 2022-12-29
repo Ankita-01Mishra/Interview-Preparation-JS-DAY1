@@ -47,7 +47,7 @@ Ans-> var is introduced before ES6 Whereas let and const introduced on ES6 versi
     </pre>
     <h3>4. What is execution context?</h3>
     <pre>
-Ans-> When browser encounters script tag, JS enginew creates a new environment for execution. This environment is known as execution context.
+Ans-> When browser encounters script tag, JS engine creates a new environment for execution. This environment is known as execution context.
            Two kinds of execution context
                 i)GEC (Global Execution Context)
                ii)FEC  (Functional Execution Context)
@@ -95,5 +95,34 @@ Ans-> Closure is a function that has acess to the variables in its lexical envir
             console.log(counter());
             console.log(counter());
     </pre>
+    <h3>Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h3>
+    <pre>
+Ans-->The call method is used to call a function with a specified this value and arguments passed as individual values. 
+            Example:  
+            function test(arg1,arg2){
+                console.log(this.name,arg1,arg2);
+            }
+            const testName={
+                name:'Ankita'
+            }
+            test.apply(testName,100,200)
+      The apply method is similar to call() but arguments passed as array.  
+            Example:
+            function test(...arguments){
+                console.log(this.name,arguments);
+            }
+            const testName={
+                name:'Ankita'
+            }
+            test.call(testName,[100,200])
+       The bind method is used to create a new function, that has the same body of the original function, but with a specified this value and arguments. 
+            Example
+            function test(arg){
+                console.log(this.name,arg);
+            }
+            const testName=test.bind({name:'Ankita'},'Mishra')
+            testName()
+    </pre>
+    <script src="main.js"></script>
 </body>
 </html>
